@@ -9,8 +9,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Thanks</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
+<body class="text-center">
     <h1>Thank you @Model.Name !</h1>
     @if(Model.WillAttend==true)
     {
@@ -23,6 +24,6 @@
 
     }
 
-    Please find out <a asp-action="ListResponses" > who attend the party </a>. 
+    Please find out <a class="navbar-link" asp-action="ListResponses" > who attend the party </a>. 
 </body>
 </html>

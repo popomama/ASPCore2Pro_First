@@ -9,37 +9,40 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ListResponses</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    @if (Model.Count() == 0)
-    {
-        @: We are still looking for the attendees.
+<body >
+    <div class="panel-body">
+        @if (Model.Count() == 0)
+        {
+            @: <h2>We are still looking for the attendees</h2>
 
-    }
-    else
-    {
-        @: Our guest list is below
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach(var guest in Model)
-            {
-                <tr>
-                    <td>@guest.Name</td>
-                    <td>@guest.Email</td>
-                    <td>@guest.Phone</td>
+        }
+        else
+        {
+            @: <h2>Our guest list is below</h2>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var guest in Model)
+                {
+                    <tr>
+                        <td>@guest.Name</td>
+                        <td>@guest.Email</td>
+                        <td>@guest.Phone</td>
 
-                </tr>
-            }
-
-            </tbody>
-        </table>
-    }
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        Go back to <a class="btn btn-primary"  asp-action="RsvpForm">Rsvp Now</a>
+    </div>
 </body>
 </html>
